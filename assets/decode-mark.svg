@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DECODE mark: a circular badge (echoing the FuSo lockup) enclosing a
+     policy "card". Three rows of text resolve into nodes on the right —
+     opaque policy decoded into design and code. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="DECODE">
+  <circle cx="100" cy="100" r="94" fill="#ffffff" stroke="#5B21B6" stroke-width="4"/>
+  <rect x="42" y="42" width="116" height="116" rx="20" fill="none" stroke="#5B21B6" stroke-width="3" opacity="0.3"/>
+  <g stroke-linecap="round" fill="none">
+    <path d="M62,76H114" stroke="#5B21B6" stroke-width="7"/>
+    <rect x="124" y="69.5" width="13" height="13" rx="2" fill="#5B21B6"/>
+
+    <path d="M62,100H96" stroke="#0E7490" stroke-width="7"/>
+    <rect x="106" y="93.5" width="13" height="13" rx="2" stroke="#0E7490" stroke-width="3"/>
+
+    <path d="M62,124H104" stroke="#9C93AE" stroke-width="7"/>
+    <rect x="114" y="117.5" width="13" height="13" rx="2" stroke="#9C93AE" stroke-width="3"/>
+  </g>
+</svg>

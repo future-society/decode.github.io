@@ -1,0 +1,853 @@
+/* DECODE project site — same structural language as the FuSo hub site
+   (fixed nav, 12-column grid with a narrow label rail, alternating section
+   backgrounds, hairline-bordered tiles), on its own palette: violet for the
+   DEsign side, teal for the CODE side. */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:    #121212;
+  --white:    #ffffff;
+  --gray:     #f4f2f8;
+  --mid:      #8b8697;
+  --accent:   #5B21B6;   /* design */
+  --accent-2: #0E7490;   /* code */
+  --font:     'Inter', system-ui, sans-serif;
+  --gap: 2rem;
+  --max: 1280px;
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.3fr repeat(11, 1fr);
+  gap: var(--gap);
+}
+
+h1, h2, h3, p { overflow-wrap: break-word; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+::selection { background: rgba(91, 33, 182, 0.16); }
+
+.accent-text { color: var(--accent); }
+.code-text   { color: var(--accent-2); }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  z-index: 200;
+  font-size: 0.8rem;
+}
+.skip-link:focus { left: 0; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 2px solid var(--gray);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--black);
+}
+.nav-logo img { height: 30px; width: auto; display: block; }
+
+.nav-wordmark {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+nav ul { list-style: none; display: flex; align-items: center; gap: 2rem; margin-left: auto; }
+
+nav ul a {
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black);
+  transition: color 0.15s;
+}
+nav ul a:hover { color: var(--accent); }
+
+/* Back-link to the parent hub, set apart the way the FuSo bar sets apart its
+   language switcher. */
+.nav-hub {
+  margin-left: 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid #ddd;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--mid);
+  transition: color 0.15s;
+}
+.nav-hub:hover { color: var(--accent); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px; height: 40px; padding: 8px;
+  background: none; border: none; cursor: pointer;
+}
+.nav-toggle span {
+  display: block; width: 100%; height: 2px;
+  background: var(--black);
+  transition: transform 0.25s, opacity 0.25s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── HERO ─── */
+#hero {
+  margin-top: 56px;
+  padding: 4rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 0.3fr repeat(11, 1fr);
+  gap: var(--gap);
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.hero-text { grid-column: 3 / 9; }
+
+.hero-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 1.25rem;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.hero-slogan {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 560px;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.hero-meta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+.hero-meta .sep { padding: 0 0.45rem; }
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+
+.button {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--white);
+  transition: background 0.15s, color 0.15s;
+}
+.button:hover { background: #46188f; border-color: #46188f; }
+
+.button-secondary { background: transparent; color: var(--accent); }
+.button-secondary:hover { background: var(--accent); color: var(--white); }
+
+.hero-image {
+  grid-column: 9 / 13;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.hero-image img { width: 100%; max-width: 300px; }
+
+/* ─── MISSION BOX ─── */
+/* Sits outside the alternating section rhythm, on the plain white body, and
+   aligns with the About column below it. */
+.intro-standalone { padding: 1rem 0 6rem; }
+.intro-standalone .about-intro { grid-column: 3 / 13; margin-bottom: 0; }
+
+.about-intro {
+  position: relative;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: rgba(91, 33, 182, 0.05);
+  padding: 1.5rem 2rem;
+  overflow: hidden;
+}
+.about-intro p { color: var(--black); }
+.about-intro p + p { margin-top: 1rem; }
+
+/* Rule-and-node accents in the corners, echoing the section labels —
+   decoration only. */
+.about-intro::before, .about-intro::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 12px;
+  background-image: url('rule-line-accent.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.about-intro::before { top: 14px; right: 20px; }
+.about-intro::after { bottom: 14px; left: 20px; transform: rotate(180deg); }
+
+/* ─── SECTIONS ─── */
+section { padding: 6rem 0; }
+
+/* Automatic alternation, so reordering sections never breaks the pattern. */
+section:nth-of-type(odd)  { background: var(--gray); }
+section:nth-of-type(even) { background: var(--white); }
+
+.section-label {
+  font-size: 0;
+  color: transparent;
+  padding-top: 1.5rem;
+  background-image: url('rule-line.svg');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% auto;
+  /* Nudge the box down so the rule lands at the heading's baseline. Uses
+     position/top rather than transform: a transform forces its own layer and
+     makes the label text render visibly heavier. */
+  position: relative;
+  top: calc(1.5rem - 1.2rem);
+}
+
+.about-label, .research-label, .news-label,
+.team-label, .partners-label { align-self: end; }
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #333;
+}
+
+a.inline-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  transition: opacity 0.15s;
+}
+a.inline-link:hover { opacity: 0.7; }
+
+/* ─── ABOUT ─── */
+.about-label { grid-column: 1 / 3; align-self: start; }
+/* About's heading runs to several lines; line the rule up with the first. */
+.about-label .section-label { top: 1.7rem; }
+.about-headline { grid-column: 3 / 9; }
+.about-headline h2 { margin-bottom: 0; }
+.about-body { grid-column: 9 / 13; padding-top: 0.5rem; }
+.about-body p + p { margin-top: 1rem; }
+
+.about-approach {
+  grid-column: 3 / 13;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--black);
+}
+.about-approach h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+
+/* Pipeline from regulatory goal to policy, in the FuSo process-flow idiom. */
+.flow {
+  grid-column: 3 / 12;
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.flow-label {
+  display: flex;
+  align-items: center;
+  padding: 0 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 84px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-align: center;
+  flex-shrink: 0;
+  transition: filter 0.15s, transform 0.15s;
+}
+.flow-step:hover { filter: brightness(1.15); transform: translateY(-1px); }
+.flow-step--code { background: var(--accent-2); }
+
+/* Two steps sharing one stage of the pipeline. */
+.flow-group { display: flex; flex-direction: column; gap: 0.35rem; flex-shrink: 0; }
+.flow-group .flow-step { align-self: stretch; }
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  color: var(--mid);
+  font-size: 1.65rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.flow-arrow-endpoint { font-weight: 900; }
+
+/* Overarching research question, pulled out as a quote. */
+.rq-main {
+  grid-column: 3 / 13;
+  margin-top: 3rem;
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  border-left: 3px solid var(--accent);
+}
+.rq-main .rq-eyebrow {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.rq-main blockquote {
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--black);
+}
+
+/* ─── RESEARCH ─── */
+.research-label { grid-column: 1 / 3; }
+.research-intro { grid-column: 3 / 13; }
+/* The lead paragraph is its own grid cell so the section rule, which is
+   bottom-aligned, meets the heading's baseline instead of dropping to the
+   bottom of the paragraph. Same reason for .team-lead below. */
+.research-intro h2 { margin-bottom: 0; }
+.research-lead { grid-column: 3 / 13; }
+
+.rq-grid {
+  grid-column: 3 / -1;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--black);
+}
+
+.rq-card { background: var(--white); padding: 2rem; }
+
+.rq-num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.rq-card h3 { font-size: 1rem; line-height: 1.4; margin-bottom: 0.75rem; }
+.rq-card p { font-size: 0.9rem; }
+
+.wp-head {
+  grid-column: 3 / -1;
+  margin-top: 4.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--black);
+}
+.wp-head h3 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 0.75rem; }
+
+.wp-list {
+  grid-column: 3 / -1;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Research sits on a white section, so the cards are tinted rather than white
+   to read as cards at all. Flip to var(--white) if the section order changes
+   and Research lands on a gray band. */
+.wp-item {
+  background: var(--gray);
+  border-top: 3px solid var(--accent);
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+.wp-item:nth-child(2) { border-top-color: var(--accent-2); }
+.wp-item:nth-child(3) { border-top-color: var(--black); }
+
+.wp-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 0.6rem;
+}
+.wp-item h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+.wp-item p { font-size: 0.9rem; }
+
+.wp-outputs { list-style: none; margin-top: 1rem; padding-top: 0.85rem; border-top: 1px solid #ddd9e6; }
+.wp-outputs li {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #555;
+  padding: 0.3rem 0 0.3rem 1rem;
+  position: relative;
+}
+.wp-outputs li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.72rem;
+  width: 5px; height: 5px;
+  border-radius: 1px;
+  background: var(--accent);
+}
+
+/* Prior work the project builds on. */
+.groundwork {
+  grid-column: 3 / -1;
+  margin-top: 3rem;
+  padding: 1.75rem 2rem;
+  background: var(--gray);
+  border-left: 3px solid var(--accent-2);
+}
+.groundwork .groundwork-eyebrow {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 0.5rem;
+}
+.groundwork h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+.groundwork p { font-size: 0.92rem; max-width: 68ch; }
+
+/* ─── NEWS ─── */
+.news-label { grid-column: 1 / 3; }
+.news-intro { grid-column: 3 / 13; }
+.news-intro h2 { margin-bottom: 0; }
+.news-body { grid-column: 3 / 11; margin-top: 2rem; }
+
+.news-list { display: grid; }
+
+.news-item { padding: 1.5rem 0; border-bottom: 1px solid #ddd9e6; }
+.news-item:first-child { border-top: 1px solid #ddd9e6; }
+
+.news-date {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+.news-item h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+.news-item p { font-size: 0.92rem; }
+
+/* ─── TEAM ─── */
+.team-label { grid-column: 1 / 3; }
+.team-intro { grid-column: 3 / 13; }
+.team-intro h2 { margin-bottom: 0; }
+.team-lead { grid-column: 3 / 13; }
+.team-wrap { grid-column: 3 / -1; margin-top: 2rem; }
+
+.team-group-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin: 2.5rem 0 1rem;
+}
+.team-group-title:first-child { margin-top: 0; }
+
+.team-bricks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+}
+
+/* 1px hairline via box-shadow so neighbouring bricks share an edge instead of
+   doubling it. */
+.team-brick {
+  background: var(--white);
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 0 0 1px var(--black);
+  transition: background 0.15s;
+}
+.team-brick:hover { background: var(--gray); }
+
+.brick-role {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.brick-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.brick-name a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--mid); }
+.brick-name a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.brick-detail { font-size: 0.75rem; font-weight: 400; color: var(--mid); margin-top: 0.25rem; }
+
+.brick-avatar {
+  display: block;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  margin: 0 auto 1rem;
+}
+
+.brick-avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray);
+  color: var(--mid);
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* Roles being recruited: same brick, visually held back. */
+.team-brick--open { background: transparent; box-shadow: 0 0 0 1px #cfc9dd; }
+.team-brick--open .brick-role { color: var(--mid); }
+.team-brick--open .brick-name { color: var(--mid); font-weight: 600; }
+
+/* ─── PARTNERS ─── */
+.partners-label { grid-column: 1 / 3; }
+.partners-intro { grid-column: 3 / 13; }
+.partners-intro h2 { margin-bottom: 0; }
+.partners-wrap { grid-column: 3 / -1; margin-top: 2rem; }
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+}
+
+.partner-tile {
+  background: var(--white);
+  box-shadow: 0 0 0 1px var(--black);
+  padding: 2rem 1.5rem;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.partner-tile:hover { background: var(--gray); }
+
+.partner-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  line-height: 1.3;
+}
+.partner-role {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cooperation { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #ddd9e6; }
+.cooperation-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 0.85rem;
+}
+.cooperation-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 0.75rem; }
+.cooperation-list li {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #444;
+  border: 1px solid #ddd9e6;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+}
+.cooperation-list li a { color: inherit; text-decoration: none; }
+.cooperation-list li a:hover { color: var(--accent); }
+
+/* ─── FOOTER ─── */
+footer {
+  /* Continues the section odd/gray, even/white alternation. Partners is the
+     last section (odd → gray), so the footer takes white. Flip this if the
+     number of sections above changes. */
+  background: var(--white);
+  color: var(--black);
+  padding: 3rem 0;
+  border-top: 1px solid #ddd9e6;
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem 4rem;
+}
+
+.footer-logo { display: flex; align-items: center; gap: 1rem; }
+.footer-logo img { width: 72px; height: 72px; object-fit: contain; }
+
+.footer-wordmark {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.footer-sub { font-size: 0.8rem; font-weight: 300; color: #444; max-width: 34ch; margin-top: 0.15rem; }
+
+.footer-hub { font-size: 0.8rem; font-weight: 300; color: #444; max-width: 32ch; }
+.footer-hub a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+
+/* Funder credit: its own full-width row above the privacy note, so the logo
+   sits on the centre line rather than competing with the wordmark. */
+.footer-funding {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.footer-funder-logo { display: block; line-height: 0; }
+.footer-funder-logo img { height: 44px; width: auto; display: block; }
+
+.footer-funder-note {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #444;
+  max-width: 40ch;
+}
+.footer-funder-note a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+
+.footer-note {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--mid);
+}
+.footer-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer-note a:hover { color: var(--accent); }
+
+/* ─── RESPONSIVE ─── */
+/* The nav collapses earlier than the rest of the layout: the horizontal menu
+   gets cramped well before the grid does. */
+@media (max-width: 1000px) {
+  .nav-toggle { display: flex; margin-left: 0.75rem; }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 56px; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 2rem 1.25rem;
+    background: var(--white);
+    border-bottom: 2px solid var(--gray);
+  }
+  nav ul.open { display: flex; }
+  nav ul li { padding: 0.65rem 0; }
+  nav ul li a { font-size: 0.85rem; }
+
+  .nav-hub { margin-left: auto; padding-left: 0; border-left: none; }
+}
+
+@media (max-width: 900px) {
+  :root { --gap: 1.5rem; }
+
+  /* Collapse the 12-col grid to one column so inter-column gaps don't
+     accumulate into horizontal overflow. */
+  .grid { grid-template-columns: 1fr; }
+  /* Let grid items shrink below min-content so long words wrap instead of
+     widening the track. */
+  .grid > * { min-width: 0; }
+
+  #hero { grid-template-columns: 1fr; padding-top: 3rem; padding-bottom: 3rem; }
+  .hero-text { grid-column: 1 / -1; }
+  .hero-image {
+    grid-column: 1 / -1;
+    justify-content: center;
+    order: -1;
+    margin-bottom: 2.5rem;
+  }
+  .hero-image img { width: 60%; max-width: 220px; }
+
+  .about-label { display: none; }
+
+  .research-label, .news-label, .team-label, .partners-label {
+    display: block;
+    justify-self: start;
+    width: 5.5rem;
+  }
+
+  .about-headline, .about-body, .about-approach, .flow, .rq-main,
+  .research-intro, .research-lead, .rq-grid, .wp-head, .wp-list, .groundwork,
+  .news-intro, .news-body,
+  .team-intro, .team-lead, .team-wrap,
+  .partners-intro, .partners-wrap,
+  .intro-standalone .about-intro { grid-column: 1 / -1; }
+
+  .rq-grid { grid-template-columns: 1fr; }
+  .wp-list { grid-template-columns: 1fr; }
+  .partner-grid { grid-template-columns: 1fr; }
+  .section-label { margin-bottom: 0; }
+
+  /* The pipeline stacks rather than wrapping: a wrapped horizontal chain
+     strands arrows at line ends and reads as a broken sequence. */
+  .flow { flex-direction: column; align-items: stretch; flex-wrap: nowrap; }
+  .flow-label { justify-content: center; }
+  .flow-group { width: 100%; }
+  .flow-arrow { justify-content: center; transform: rotate(90deg); min-height: 24px; }
+}
+
+@media (max-width: 730px) {
+  .team-bricks { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 1.25rem; }
+  .footer-funding { flex-direction: column; text-align: center; }
+  nav ul { padding: 0.5rem 1.25rem 1.25rem; }
+  #hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+
+  section { padding: 4rem 0; }
+  .intro-standalone { padding-bottom: 4rem; }
+  .hero-sub { font-size: 1.1rem; }
+  .about-intro { padding: 1.25rem 1.25rem; }
+  .rq-card { padding: 1.5rem; }
+  .groundwork { padding: 1.5rem 1.25rem; }
+  .team-brick { padding: 1.25rem 1rem; }
+  .brick-avatar { width: 90px; height: 90px; }
+}
+
+@media (max-width: 460px) {
+  .team-bricks { grid-template-columns: 1fr; }
+}

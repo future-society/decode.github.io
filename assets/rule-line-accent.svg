@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Section-label rule for DECODE: a hairline that terminates in an open
+     square node. Mirrors the role of FuSo's circuit line, with a square
+     ("block of code") node instead of a circular one. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101.46 13.01">
+  <g fill="none" stroke="#5B21B6">
+    <path stroke-width="1.95" d="M0,6.5H88.2"/>
+    <rect x="89.1" y="1.4" width="10.2" height="10.2" rx="1.6" stroke-width="1.95"/>
+  </g>
+</svg>

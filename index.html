@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DECODE | Human-centered data governance through privacy-enhancing design and code</title>
+  <meta name="description" content="DECODE is an interdisciplinary research project on evidence-informed and human-centered data governance policies based on privacy-enhancing DEsign and CODE. Funded by the Swiss National Science Foundation, it combines law, communication research, HCI, and computer science to generate the evidence regulators need to make transparency and empowerment real in smart environments.">
+  <meta name="keywords" content="data governance, privacy by design, privacy-enhancing technologies, computational law, automatically processable regulation, transparency, empowerment, personalization, privacy labels, smart speakers, conversational agents, GDPR, data protection, legal design, evidence-informed policymaking, HCI, University of Lausanne, BI Norwegian Business School, University of St.Gallen">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="DECODE project">
+  <link rel="icon" href="assets/decode-mark.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://futuresociety.ch/decode/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DECODE">
+  <meta property="og:url" content="https://futuresociety.ch/decode/">
+  <meta property="og:title" content="DECODE | Privacy-enhancing design and code for human-centered data governance">
+  <meta property="og:description" content="An interdisciplinary research project generating the evidence base regulators need to leverage design and code for human-centered data governance.">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DECODE | Privacy-enhancing design and code for human-centered data governance">
+  <meta name="twitter:description" content="An interdisciplinary research project generating the evidence base regulators need to leverage design and code for human-centered data governance.">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchProject",
+    "@id": "https://futuresociety.ch/decode/#project",
+    "name": "DECODE",
+    "alternateName": "Evidence-informed and human-centered data governance policies based on privacy-enhancing DEsign and CODE",
+    "url": "https://futuresociety.ch/decode/",
+    "description": "DECODE systematically analyzes and experiments with interface designs, privacy-enhancing technologies, and the encoding of data protection rights to enhance transparency and empowerment over data processing in smart environments, and translates the resulting evidence for regulatory audiences.",
+    "knowsAbout": [
+      "data governance", "informational privacy", "data protection law",
+      "privacy by design", "privacy-enhancing technologies", "privacy labels",
+      "computational law", "automatically processable regulation",
+      "transparency", "user empowerment", "personalized law",
+      "legal design", "evidence-informed policymaking",
+      "human-computer interaction", "conversational agents", "smart speakers"
+    ],
+    "funder": {
+      "@type": "Organization",
+      "name": "Swiss National Science Foundation",
+      "alternateName": "SNSF",
+      "url": "https://www.snf.ch/en"
+    },
+    "member": [
+      {
+        "@type": "Person",
+        "name": "Aurelia Tamò-Larrieux",
+        "honorificPrefix": "Prof. Dr.",
+        "jobTitle": "Co-Principal Investigator",
+        "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Lausanne"}
+      },
+      {
+        "@type": "Person",
+        "name": "Christoph Lutz",
+        "honorificPrefix": "Prof. Dr.",
+        "jobTitle": "Co-Principal Investigator",
+        "affiliation": {"@type": "CollegeOrUniversity", "name": "BI Norwegian Business School"}
+      },
+      {
+        "@type": "Person",
+        "name": "Simon Mayer",
+        "honorificPrefix": "Prof. Dr.",
+        "jobTitle": "Project partner",
+        "affiliation": {"@type": "CollegeOrUniversity", "name": "University of St.Gallen"}
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#about">Skip to content</a>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a class="nav-logo" href="#hero">
+      <img src="assets/decode-mark.svg" alt="">
+      <span class="nav-wordmark">De<span class="accent-text">code</span></span>
+    </a>
+    <ul id="navMenu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#partners">Partners</a></li>
+    </ul>
+    <a class="nav-hub" href="https://futuresociety.ch/" target="_blank" rel="noopener">FuSo Hub</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-text">
+    <p class="hero-label">Research project &nbsp;&middot;&nbsp; Data governance</p>
+    <h1>DE<span class="accent-text">CODE</span></h1>
+    <p class="hero-slogan">turning regulatory goals into design and code</p>
+    <p class="hero-sub">Evidence-informed and human-centered data governance policies based on privacy-enhancing <span class="accent-text">DE</span>sign and <span class="code-text">CODE</span>.</p>
+    <div class="hero-actions">
+      <a class="button" href="#about">About the project</a>
+      <a class="button button-secondary" href="#team">Our team</a>
+    </div>
+    <p class="hero-meta">Law<span class="sep">&times;</span>Communication<span class="sep">&times;</span>HCI<span class="sep">&times;</span>Computer Science</p>
+  </div>
+  <div class="hero-image">
+    <img src="assets/decode-mark.svg" alt="DECODE project mark">
+  </div>
+</div>
+
+<!-- MISSION INTRO -->
+<div class="intro-standalone">
+  <div class="container grid">
+    <div class="about-intro">
+      <p>Data protection law promises that people can understand how their data is processed and decide what happens to it. In practice, that promise is settled elsewhere: in the <span class="accent-text">interface designs</span> people are shown and the <span class="code-text">software code</span> that runs underneath. DECODE builds the evidence base regulators need to govern both — and to make transparency and empowerment something individuals actually experience in smart environments.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="grid">
+      <div class="about-label">
+        <p class="section-label">About</p>
+      </div>
+      <div class="about-headline">
+        <h2>Regulatory goals are written in law, but <span class="accent-text">decided in design and code.</span></h2>
+      </div>
+      <div class="about-body">
+        <p>Smart devices increasingly mediate everyday life. Technology companies design our interactions with them and write the code that determines how much personal information is processed — and so, in practice, how the right to informational privacy is honoured.</p>
+        <p>Privacy-invasive designs and code are abundant. Yet the same fields — human-computer interaction, computational law, and computer science — also produce privacy-enhancing designs and technologies. What is missing is the scientific evidence that would let regulators put them to work.</p>
+      </div>
+
+      <div class="about-approach">
+        <h3>From evidence to policy</h3>
+        <p>Strategy papers in Switzerland and the EU call for human-centered data governance. On the ground, individuals face opaque, one-size-fits-all data processing and a complex patchwork of rules they must fight to enforce. DECODE closes that gap by systematically analyzing interface designs, privacy-enhancing technologies, and the encoding of data protection rights; by testing them with users; and by translating what we learn into a form regulators can act on. The project combines methodologies from legal design, HCI, and evidence-informed policymaking, and works with data protection authorities, civil society, standard-setting bodies, and policymakers throughout.</p>
+      </div>
+
+      <div class="flow">
+        <span class="flow-label">Evidence</span>
+        <span class="flow-arrow flow-arrow-endpoint" aria-hidden="true">&rsaquo;</span>
+        <span class="flow-group">
+          <span class="flow-step">Design Prototypes</span>
+          <span class="flow-step flow-step--code">Encoded Rights</span>
+        </span>
+        <span class="flow-arrow" aria-hidden="true">&rsaquo;</span>
+        <span class="flow-group">
+          <span class="flow-step">Lab Experiments</span>
+          <span class="flow-step">User Studies</span>
+        </span>
+        <span class="flow-arrow" aria-hidden="true">&rsaquo;</span>
+        <span class="flow-group">
+          <span class="flow-step">Stakeholder Workshops</span>
+          <span class="flow-step">Policy Prototyping</span>
+        </span>
+        <span class="flow-arrow flow-arrow-endpoint" aria-hidden="true">&rsaquo;</span>
+        <span class="flow-label">Policy</span>
+      </div>
+
+      <div class="rq-main">
+        <p class="rq-eyebrow">Overarching research question</p>
+        <blockquote>To what extent can regulators leverage design and code to foster a human-centered data governance regime?</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <div class="grid">
+      <div class="research-label">
+        <p class="section-label">Research</p>
+      </div>
+      <div class="research-intro">
+        <h2>Research <span class="accent-text">questions</span></h2>
+      </div>
+      <div class="research-lead">
+        <p>Three sub-questions build towards the overarching question. Each is a block of the evidence base: what design and code can do, what personalization adds and costs, and how the resulting findings change the regulatory process itself.</p>
+      </div>
+
+      <div class="rq-grid">
+        <div class="rq-card">
+          <p class="rq-num">RQ 1</p>
+          <h3>How can design and code promote human-centered transparency and empowerment over data processing?</h3>
+          <p>Dark patterns, information overload, and invisible processing leave people unable to grasp what happens to their data — and unable to act on it. We study transparency measures such as privacy labels, icons, and inspectable data flows alongside empowerment mechanisms that encode individual rights so they can be exercised automatically rather than through an uphill battle.</p>
+        </div>
+        <div class="rq-card">
+          <p class="rq-num">RQ 2</p>
+          <h3>How can personalization of designs, code, and the law further enhance the goals of transparency and empowerment?</h3>
+          <p>Personalized disclosures and settings could make protection more effective — or erode the uniform application of the law. We test where tailoring genuinely helps people understand and act, and where the arguments for uniform rules should prevail, connecting the legal debate on personalized law to the design field for the first time.</p>
+        </div>
+        <div class="rq-card">
+          <p class="rq-num">RQ 3</p>
+          <h3>How can we methodologically innovate the regulatory process and outcomes to enable a human-centered data governance regime?</h3>
+          <p>Evidence-informed policymaking, anticipatory regulation, and policy prototyping share a collaborative, future-oriented view of regulation, but have gained little traction in data governance. We put them to work on our own findings and evaluate what they produce.</p>
+        </div>
+      </div>
+
+      <div class="wp-head">
+        <h3>Work packages</h3>
+        <p>DECODE runs for four years across three consecutive work packages, moving from exploration to experimentation to translation. Empirical work starts with conversational agents and smart speakers in home settings, then examines how the findings transfer to other domains.</p>
+      </div>
+
+      <div class="wp-list">
+        <div class="wp-item">
+          <div class="wp-meta"><span>WP1</span><span>Months 1&ndash;12</span></div>
+          <h4>Exploration</h4>
+          <p>We systematize the transparency- and empowerment-enhancing approaches and personalization mechanisms scattered across HCI, computational law, and computer science, and link them into one typology. Expert interviews fill the gaps the literature leaves open.</p>
+          <ul class="wp-outputs">
+            <li>Two systematic literature reviews</li>
+            <li>Expert interviews across transparency, empowerment, and personalization</li>
+            <li>A synthesized typology of approaches, published as a report</li>
+          </ul>
+        </div>
+        <div class="wp-item">
+          <div class="wp-meta"><span>WP2</span><span>Months 13&ndash;36</span></div>
+          <h4>Experimentation &amp; evidence</h4>
+          <p>We build six prototypes — two on transparency, two on empowerment, two on personalizing both — and measure their effects on understanding, behavioral change, and acceptability. Where data-driven methods are used, we document compliance with current AI regulation.</p>
+          <ul class="wp-outputs">
+            <li>Six design- and code-based prototypes</li>
+            <li>Usability tests, focus groups, and controlled experiments</li>
+            <li>Representative user studies per prototype (N &gt; 500)</li>
+            <li>A compilation of evaluation metrics for privacy interventions</li>
+          </ul>
+        </div>
+        <div class="wp-item">
+          <div class="wp-meta"><span>WP3</span><span>Months 37&ndash;48</span></div>
+          <h4>Translation</h4>
+          <p>We take the evidence to the people who can act on it. Structured workshops with data protection authorities, civil society, industry, and policymakers turn findings into regulatory learnings, best practices, and digital-ready policies that lend themselves to machine execution.</p>
+          <ul class="wp-outputs">
+            <li>Regulatory briefs from each stakeholder workshop</li>
+            <li>A consolidated report for regulatory audiences</li>
+            <li>A blueprint for interdisciplinary privacy research</li>
+            <li>A closing symposium bringing the communities together</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="groundwork">
+        <p class="groundwork-eyebrow">Groundwork</p>
+        <h3>Visual Privacy</h3>
+        <p>DECODE builds on the team's joint work on Visual Privacy, a web plugin that reads a privacy policy and uses generative AI to produce a visual label rating it from A to F. In an online experiment mimicking a news aggregator (n = 825) and an accompanying survey, the ratings measurably shifted how people judged a site's risks and benefits, with an indirect effect on privacy protection behavior. Over 75% of participants said they would like such labels to become mandatory. The work was presented at the CNIL Privacy Research Days 2025.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="container">
+    <div class="grid">
+      <div class="news-label">
+        <p class="section-label">News</p>
+      </div>
+      <div class="news-intro">
+        <h2>News &amp; <span class="accent-text">updates</span></h2>
+      </div>
+      <div class="news-body">
+        <div class="news-list">
+          <!-- Newest first. Keep entries short: date, headline, one or two sentences. -->
+          <div class="news-item">
+            <p class="news-date">September 2026</p>
+            <h3>Project website online</h3>
+            <p>The DECODE website is live. Project updates, outputs, and open positions will be published here as the project progresses.</p>
+          </div>
+          <div class="news-item">
+            <p class="news-date">2025</p>
+            <h3>Visual Privacy presented at the CNIL Privacy Research Days</h3>
+            <p>The team's work on AI-generated visual privacy labels, which forms part of the groundwork for DECODE, was presented at the CNIL Privacy Research Days and has attracted interest from the French data protection authority.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <div class="grid">
+      <div class="team-label">
+        <p class="section-label">Team</p>
+      </div>
+      <div class="team-intro">
+        <h2>Our <span class="accent-text">team</span></h2>
+      </div>
+      <div class="team-lead">
+        <p>DECODE brings together expertise in law, communication research, human-computer interaction, and computer science. The co-principal investigators and the project partner have collaborated on privacy and data-related aspects of emerging technologies for a decade.</p>
+      </div>
+      <div class="team-wrap">
+        <p class="team-group-title">Project leads</p>
+        <div class="team-bricks">
+          <div class="team-brick">
+            <img class="brick-avatar" src="https://www.sectorplandls.nl/wordpress/wp-content/uploads/elementor/thumbs/at-scaled-e1667747586811-pxbhxlwz04n8sysm54fadyobe105o6hzjq0aotqw8o.jpg" alt="Aurelia Tamò-Larrieux">
+            <p class="brick-role">Co-PI</p>
+            <p class="brick-name"><a href="https://edpub.unil.ch/interpub/noauth/php/Un/UnPers.php?PerNum=1267634&amp;LanCode=8" target="_blank" rel="noopener">Aurelia Tamò-Larrieux</a></p>
+            <p class="brick-detail">Law &amp; technology<br>University of Lausanne</p>
+          </div>
+          <div class="team-brick">
+            <div class="brick-avatar brick-avatar--placeholder" aria-hidden="true">CL</div>
+            <p class="brick-role">Co-PI</p>
+            <p class="brick-name"><a href="https://www.bi.edu/about-bi/employees/department-of-communication-and-culture/christoph-lutz/" target="_blank" rel="noopener">Christoph Lutz</a></p>
+            <p class="brick-detail">Communication &amp; social science<br>BI Norwegian Business School</p>
+          </div>
+          <div class="team-brick">
+            <img class="brick-avatar" src="https://storage.inrupt.com/f531f8ef-cd9d-474a-9fa6-70026b37c847/public/publicPortrait-square.jpg" alt="Simon Mayer">
+            <p class="brick-role">Project partner</p>
+            <p class="brick-name"><a href="https://ics.unisg.ch/chairs/simon-mayer-interaction-and-communication-based-systems/" target="_blank" rel="noopener">Simon Mayer</a></p>
+            <p class="brick-detail">Computer science &amp; HCI<br>University of St.Gallen</p>
+          </div>
+        </div>
+
+        <!-- Recruiting: replace a brick with a filled-in one as each role is
+             taken, keeping the same markup as the leads above. -->
+        <p class="team-group-title">Researchers</p>
+        <div class="team-bricks">
+          <div class="team-brick team-brick--open">
+            <div class="brick-avatar brick-avatar--placeholder" aria-hidden="true">+</div>
+            <p class="brick-role">Open position</p>
+            <p class="brick-name">PhD researcher, Law</p>
+            <p class="brick-detail">University of Lausanne</p>
+          </div>
+          <div class="team-brick team-brick--open">
+            <div class="brick-avatar brick-avatar--placeholder" aria-hidden="true">+</div>
+            <p class="brick-role">Open position</p>
+            <p class="brick-name">PhD researcher, Empirical social science</p>
+            <p class="brick-detail">BI Norwegian Business School</p>
+          </div>
+          <div class="team-brick team-brick--open">
+            <div class="brick-avatar brick-avatar--placeholder" aria-hidden="true">+</div>
+            <p class="brick-role">Open position</p>
+            <p class="brick-name">Postdoctoral researcher, Digital law</p>
+            <p class="brick-detail">University of Lausanne</p>
+          </div>
+          <div class="team-brick team-brick--open">
+            <div class="brick-avatar brick-avatar--placeholder" aria-hidden="true">+</div>
+            <p class="brick-role">Open position</p>
+            <p class="brick-name">PhD researcher, Computer science</p>
+            <p class="brick-detail">University of St.Gallen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="container">
+    <div class="grid">
+      <div class="partners-label">
+        <p class="section-label">Partners</p>
+      </div>
+      <div class="partners-intro">
+        <h2>Project <span class="accent-text">partners</span></h2>
+      </div>
+      <div class="partners-wrap">
+        <div class="partner-grid">
+          <a class="partner-tile" href="https://www.unil.ch/" target="_blank" rel="noopener">
+            <span class="partner-name">University of Lausanne</span>
+            <span class="partner-role">Host institution</span>
+          </a>
+          <a class="partner-tile" href="https://www.bi.edu/" target="_blank" rel="noopener">
+            <span class="partner-name">BI Norwegian Business School</span>
+            <span class="partner-role">Co-applicant</span>
+          </a>
+          <a class="partner-tile" href="https://www.unisg.ch/en/" target="_blank" rel="noopener">
+            <span class="partner-name">University of St.Gallen</span>
+            <span class="partner-role">Project partner</span>
+          </a>
+        </div>
+
+        <div class="cooperation">
+          <p class="cooperation-title">In cooperation with</p>
+          <ul class="cooperation-list">
+            <li><a href="https://futuresociety.ch/" target="_blank" rel="noopener">Future Society Hub (FuSo)</a></li>
+            <li>LabEx, University of Lausanne</li>
+            <li>Behavioral Lab-HSG</li>
+            <li>Data protection authorities &amp; civil society partners</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">
+      <img src="assets/decode-mark.svg" alt="">
+      <div>
+        <p class="footer-wordmark">DECODE</p>
+        <p class="footer-sub">Evidence-informed and human-centered data governance policies based on privacy-enhancing DEsign and CODE.</p>
+      </div>
+    </div>
+    <p class="footer-hub">A joint project of the University of Lausanne and BI Norwegian Business School, with the University of St.Gallen as project partner. Part of the <a href="https://futuresociety.ch/" target="_blank" rel="noopener">Future Society Hub</a> network.</p>
+    <div class="footer-funding">
+      <a class="footer-funder-logo" href="https://www.snf.ch/en" target="_blank" rel="noopener">
+        <img src="assets/images/snsf-en.svg" alt="Swiss National Science Foundation">
+      </a>
+      <p class="footer-funder-note">This project is funded by the <a href="https://www.snf.ch/en" target="_blank" rel="noopener">Swiss National Science Foundation</a> (SNSF).</p>
+    </div>
+    <p class="footer-note">We measure visits with <a href="https://www.goatcounter.com/help/privacy" target="_blank" rel="noopener">GoatCounter</a>: cookieless and anonymous, storing no personal data and saving nothing on your device.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav: toggle the dropdown menu
+  (function () {
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    if (!toggle || !menu) return;
+    const close = () => {
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+    toggle.addEventListener('click', function () {
+      const open = menu.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  })();
+
+  // Portraits are hosted externally; fall back to the initials placeholder so
+  // a dead image URL never leaves a broken icon in the team grid.
+  document.querySelectorAll('.brick-avatar[src]').forEach(img => {
+    const fallback = () => {
+      const div = document.createElement('div');
+      div.className = 'brick-avatar brick-avatar--placeholder';
+      div.setAttribute('aria-hidden', 'true');
+      div.textContent = (img.alt || '').split(/\s+/).map(w => w[0] || '').join('').slice(0, 2).toUpperCase();
+      img.replaceWith(div);
+    };
+    if (img.complete && !img.naturalWidth) fallback();
+    else img.addEventListener('error', fallback);
+  });
+</script>
+
+<!-- Analytics: GoatCounter (cookieless, no personal data stored) -->
+<script data-goatcounter="https://fuso.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
