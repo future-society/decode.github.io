@@ -720,6 +720,10 @@ footer .container {
 }
 .footer-sub { font-size: 0.8rem; font-weight: 300; color: #444; max-width: 34ch; margin-top: 0.15rem; }
 
+.footer-hub-brand { display: flex; align-items: center; gap: 0.85rem; }
+.footer-hub-logo { display: block; line-height: 0; flex-shrink: 0; }
+.footer-hub-logo img { height: 34px; width: auto; display: block; }
+
 .footer-hub { font-size: 0.8rem; font-weight: 300; color: #444; max-width: 32ch; }
 .footer-hub a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
 
