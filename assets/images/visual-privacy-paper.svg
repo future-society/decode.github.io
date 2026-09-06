@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 860" role="img" aria-labelledby="vpTitle vpDesc">
+  <title id="vpTitle">Visual Privacy: The Impact of Privacy Labels on Privacy Behaviors Online</title>
+  <desc id="vpDesc">Preview card of the accepted paper in ACM Transactions on Social Computing, with its title, authors, and abstract.</desc>
+
+  <rect x="1" y="1" width="638" height="858" rx="8" fill="#ffffff" stroke="#ddd9e6" stroke-width="1"/>
+  <rect x="1" y="1" width="638" height="8" rx="4" fill="#0E7490"/>
+
+  <!-- folded corner -->
+  <path d="M 566 9 L 639 9 L 639 82 Z" fill="#f4f2f8"/>
+  <path d="M 566 9 L 639 82" stroke="#ddd9e6" stroke-width="1"/>
+
+  <g font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+    <text x="56" y="70" font-size="12" font-weight="700" letter-spacing="1.6" fill="#0E7490">ACM TRANSACTIONS ON SOCIAL COMPUTING</text>
+    <text x="56" y="92" font-size="11" fill="#8b8697">Vol. 9, No. 2 &#183; Article, pp. 1&#8211;27 &#183; 2026 &#183; Open Access</text>
+
+    <text x="56" y="146" font-size="29" font-weight="800" fill="#121212">Visual Privacy: The Impact</text>
+    <text x="56" y="183" font-size="29" font-weight="800" fill="#121212">of Privacy Labels on Privacy</text>
+    <text x="56" y="220" font-size="29" font-weight="800" fill="#121212">Behaviors Online</text>
+
+    <text x="56" y="264" font-size="14" fill="#4b4658">K. Garcia, A. Tam&#242;-Larrieux, Y. Meier, S.</text>
+    <text x="56" y="284" font-size="14" fill="#4b4658">Mayer, C. Lutz, C. Guitton, L. Stern, R. Rot,</text>
+    <text x="56" y="304" font-size="14" fill="#4b4658">S. Pilz &amp; S. Mulders</text>
+
+    <line x1="56" y1="336" x2="584" y2="336" stroke="#e5e1ee" stroke-width="1"/>
+
+    <text x="56" y="364" font-size="11" font-weight="700" letter-spacing="1.4" fill="#5B21B6">ABSTRACT</text>
+
+    <g font-size="14.5" fill="#2b2733">
+      <text x="56" y="390">Research has consistently shown that websites&#8217;</text>
+      <text x="56" y="412">privacy policies fail to inform users, prompting</text>
+      <text x="56" y="434">exploration of more condensed, visual solutions such</text>
+      <text x="56" y="456">as icons and privacy labels. We present the Visual</text>
+      <text x="56" y="478">Privacy browser extension, which automatically</text>
+      <text x="56" y="500">computes a privacy rating and visualizes it in a</text>
+      <text x="56" y="522">privacy label, and study its impact on privacy</text>
+      <text x="56" y="544">protection behavior in an online experiment</text>
+      <text x="56" y="566">(N&#160;=&#160;825).</text>
+    </g>
+
+    <line x1="56" y1="606" x2="584" y2="606" stroke="#e5e1ee" stroke-width="1"/>
+    <text x="56" y="634" font-size="12" font-weight="700" fill="#0E7490">Open access &#183; CC BY 4.0</text>
+    <text x="56" y="656" font-size="13" fill="#5B21B6" font-family="'DejaVu Sans Mono', monospace">doi.org/10.1145/3804460</text>
+  </g>
+</svg>
